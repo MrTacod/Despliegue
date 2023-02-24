@@ -6,11 +6,11 @@ if ($connection) {
 
     /* En caso de que exista el id, el usuario se elimina de la base de datos */
 
-    if (isset($_POST['id_usuario'])) {
+    if (isset($_POST['id'])) {
 
-        $id_usuario = $_POST['id_usuario'];
+        $id = $_POST['id'];
         
-        $query = "DELETE FROM usuario WHERE id_usuario = $id_usuario";
+        $query = "DELETE FROM usuario WHERE id = $id";
         $result = mysqli_query($connection, $query);
         if (!$result) {
             die('Query Failed.');

@@ -22,7 +22,7 @@ if ($connection) {
             'contrasena' => $row['contrasena'],
             'telefono' => $row['telefono'],
             'rol' => $row['rol'],
-            'id_usuario' => $row['id_usuario']
+            'id' => $row['id']
         );
     }
 

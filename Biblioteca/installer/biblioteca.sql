@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.4deb2+deb11u1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 23-02-2023 a las 16:19:42
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Servidor: localhost:3306
+-- Tiempo de generación: 24-02-2023 a las 11:52:52
+-- Versión del servidor: 8.0.31
+-- Versión de PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,20 +24,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `contacto`
+--
+
+CREATE TABLE `contacto` (
+    `id` int NOT NULL,
+    `id_usuario` int NOT NULL,
+    `correo` varchar(255) NOT NULL,
+    `mensaje` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Truncar tablas antes de insertar `contacto`
+--
+
+TRUNCATE TABLE `contacto`;
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `libro`
 --
 
 CREATE TABLE `libro` (
-  `id_libro` int(11) NOT NULL,
-  `titulo` varchar(255) NOT NULL,
-  `autor` varchar(255) NOT NULL,
-  `isbn` int(20) NOT NULL,
-  `tema` varchar(255) NOT NULL,
-  `curso` varchar(255) NOT NULL,
-  `ubicacion` varchar(255) NOT NULL,
-  `resumen` varchar(255) NOT NULL,
-  `formato` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    `id` int NOT NULL,
+    `imagen` varchar(255) NOT NULL,
+    `titulo` varchar(255) NOT NULL,
+    `autor` varchar(255) NOT NULL,
+    `isbn` int NOT NULL,
+    `resumen` varchar(255) NOT NULL,
+    `formato` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Truncar tablas antes de insertar `libro`
@@ -51,14 +67,14 @@ TRUNCATE TABLE `libro`;
 --
 
 CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `apellido` varchar(255) NOT NULL,
-  `correo` varchar(255) NOT NULL,
-  `contrasena` varchar(100) NOT NULL,
-  `telefono` int(9) NOT NULL,
-  `rol` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    `id` int NOT NULL,
+    `nombre` varchar(255) NOT NULL,
+    `apellido` varchar(255) NOT NULL,
+    `correo` varchar(255) NOT NULL,
+    `contrasena` varchar(100) NOT NULL,
+    `telefono` int NOT NULL,
+    `rol` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Truncar tablas antes de insertar `usuario`
@@ -74,33 +90,56 @@ TRUNCATE TABLE `usuario`;
 --
 
 --
+-- Indices de la tabla `contacto`
+--
+ALTER TABLE `contacto`
+    ADD PRIMARY KEY (`id`),
+    ADD KEY `id_usuario` (`id_usuario`);
+
+--
 -- Indices de la tabla `libro`
 --
 ALTER TABLE `libro`
-  ADD PRIMARY KEY (`id_libro`),
-  ADD UNIQUE KEY `isbn` (`isbn`);
+    ADD PRIMARY KEY (`id`),
+    ADD UNIQUE KEY `isbn` (`isbn`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
+-- AUTO_INCREMENT de la tabla `contacto`
+--
+ALTER TABLE `contacto`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+    MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+    MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `contacto`
+--
+ALTER TABLE `contacto`
+    ADD CONSTRAINT `contacto_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

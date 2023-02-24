@@ -6,7 +6,7 @@ if ($connection) {
 
     /* Se recojen los datos del usuario */
 
-    $id_usuario = $_POST['id_usuario'];
+    $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $correo = $_POST['correo'];
@@ -17,7 +17,7 @@ if ($connection) {
     /* Se actualizan según los datos que le queramos cambiar */
 
     $query = "UPDATE usuario SET nombre = '$nombre', apellido = '$apellido', correo = '$correo', contrasena = '$contrasena', 
-    telefono = '$telefono', rol = '$rol' WHERE id_usuario = '$id_usuario'";
+    telefono = '$telefono', rol = '$rol' WHERE id = '$id'";
 
     $result = mysqli_query($connection, $query);
 

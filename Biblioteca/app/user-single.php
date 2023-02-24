@@ -6,8 +6,8 @@ if ($connection) {
 
     /* Selecciona un solo usuario y recoje sus datos a través de su id */
 
-    $id_usuario = $_POST['id_usuario'];
-    $query = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
+    $id = $_POST['id'];
+    $query = "SELECT * FROM usuario WHERE id = $id";
     $result = mysqli_query($connection, $query);
     if (!$result) {
         die('Query Failed');
@@ -22,7 +22,7 @@ if ($connection) {
             'contrasena' => $row['contrasena'],
             'telefono' => $row['telefono'],
             'rol' => $row['rol'],
-            'id_usuario' => $row['id_usuario']
+            'id' => $row['id']
         );
     }
 

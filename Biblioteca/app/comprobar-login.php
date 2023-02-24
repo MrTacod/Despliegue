@@ -26,7 +26,7 @@
                     $query = "SELECT * FROM usuario WHERE correo = '$correo' and contrasena = '$contrasena'";
                     $result = mysqli_query($connection, $query);
                     while($row = mysqli_fetch_array($result)){
-                        $_SESSION['id_usuario'] = $row['id_usuario'];
+                        $_SESSION['id'] = $row['id'];
                         $_SESSION['nombre'] = $row['nombre'];
                         $_SESSION['correo'] = $correo;
 

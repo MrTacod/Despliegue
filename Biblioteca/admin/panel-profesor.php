@@ -131,7 +131,7 @@
                         <table class="table border border-primary" id="tabla-admin">
                             <thead>
                                 <tr id="tr-admin">
-                                <td scope="col" class="text-white"><b>Id_usuario</b></td>
+                                <td scope="col" class="text-white"><b>Id</b></td>
                                 <td scope="col" class="text-white"><b>Nombre</b></td>
                                 <td scope="col" class="text-white"><b>Apellido</b></td>
                                 <td scope="col" class="text-white"><b>Correo electrónico</b></td>
@@ -151,7 +151,7 @@
                         <h1><b>Editar usuario</b></h1>
                             
                         <form action="../app/user-edit.php" method="post" id="form-admin">
-                            <input type="hidden" name="id_usuario" id="taskId"><br>
+                            <input type="hidden" name="id" id="taskId"><br>
 
                             <label for="nombre">Nombre:</label>
                             <input type="text" name="nombre" id="nombre" maxlength="30"><br>

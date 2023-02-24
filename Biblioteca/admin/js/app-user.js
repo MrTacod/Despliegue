@@ -19,8 +19,8 @@ $(document).ready(function() {
                 let template = '';
                 tasks.forEach(task => {
                     template += `
-                        <tr taskId="${task.id_usuario}">
-                            <td><a href="#editar-user" class="task-item">${task.id_usuario}</td></a>
+                        <tr taskId="${task.id}">
+                            <td><a href="#editar-user" class="task-item">${task.id}</td></a>
                             <td>${task.nombre}</td>
                             <td>${task.apellido}</td>
                             <td>${task.correo}</td>
@@ -43,8 +43,8 @@ $(document).ready(function() {
         //Muestro un alert para confirmar eliminar el alumno.
         if (confirm('¿Quieres eliminar este alumno?')) {
             let element = $(this)[0].parentElement.parentElement;
-            let id_usuario = $(element).attr('taskId');
-            $.post('../app/user-delete.php', {id_usuario}, function (response) {
+            let id = $(element).attr('taskId');
+            $.post('../app/user-delete.php', {id}, function (response) {
                 fetchTasks();
             });
         }
@@ -53,8 +53,8 @@ $(document).ready(function() {
     //Funcion que me permite editar un alumno sin necesidad de recargar la pagina.
     $(document).on('click', '.task-item', function () {
         let element = $(this)[0].parentElement.parentElement;
-        let id_usuario = $(element).attr('taskId');
-        $.post('../app/user-single.php', {id_usuario}, function (response) {
+        let id = $(element).attr('taskId');
+        $.post('../app/user-single.php', {id}, function (response) {
             const task = JSON.parse(response);
             $('#nombre').val(task.nombre);
             $('#apellido').val(task.apellido);
@@ -62,7 +62,7 @@ $(document).ready(function() {
             $('#contrasena').val(task.contrasena);
             $('#telefono').val(task.telefono);
             $('#rol').val(task.rol);
-            $('#taskId').val(task.id_usuario);
+            $('#taskId').val(task.id);
             edit = true;
         })
     });
@@ -79,8 +79,8 @@ $(document).ready(function() {
                 let template = '';
                 tasks.forEach(task => {
                     template += `
-                        <tr taskId="${task.id_usuario}">
-                            <td><a href="#editar-user" class="task-item">${task.id_usuario}</td></a>
+                        <tr taskId="${task.id}">
+                            <td><a href="#editar-user" class="task-item">${task.id}</td></a>
                             <td>${task.nombre}</td>
                             <td>${task.apellido}</td>
                             <td>${task.correo}</td>
@@ -110,8 +110,8 @@ $(document).ready(function() {
                 let template = '';
                 tasks.forEach(task => {
                     template += `
-                        <tr taskId="${task.id_usuario}">
-                            <td><a href="#editar-user" class="task-item">${task.id_usuario}</td></a>
+                        <tr taskId="${task.id}">
+                            <td><a href="#editar-user" class="task-item">${task.id}</td></a>
                             <td>${task.nombre}</td>
                             <td>${task.apellido}</td>
                             <td>${task.correo}</td>
@@ -141,8 +141,8 @@ $(document).ready(function() {
                 let template = '';
                 tasks.forEach(task => {
                     template += `
-                        <tr taskId="${task.id_usuario}">
-                            <td><a href="#editar-user" class="task-item">${task.id_usuario}</td></a>
+                        <tr taskId="${task.id}">
+                            <td><a href="#editar-user" class="task-item">${task.id}</td></a>
                             <td>${task.nombre}</td>
                             <td>${task.apellido}</td>
                             <td>${task.correo}</td>
