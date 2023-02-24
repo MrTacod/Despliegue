@@ -47,7 +47,7 @@ if ($connection) {
             $email->Host = 'smtp.gmail.com';
             $email->SMTPAuth = true;
             $email->Username = 'bibliotecadelsaber.shop@gmail.com';
-            $email->Password = 'gmahmmuxtgrmuoaz';
+            $email->Password = 'mtyqmxnumdhejwzz';
             $email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $email->Port = 25;
             $email->SMTPOptions = array(
