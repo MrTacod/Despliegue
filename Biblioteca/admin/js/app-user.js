@@ -6,6 +6,7 @@ $(document).ready(function() {
     fetchTasksAlumno();
     fetchTasksAdmin();
     fetchTasksProfesor();
+    fetchTasksLibro();
 
     /* USUARIOS */
 
@@ -159,5 +160,65 @@ $(document).ready(function() {
             }
         });
     }
+
+    /* LIBROS */
+
+    //Funcion que llama a los datos que estan registrados en mi base de datos.
+    function fetchTasksLibro() {
+        $.ajax({
+            url: '../app/libro-list.php',
+            type: 'GET',
+            success: function (response) {
+                let tasks = JSON.parse(response);
+                let template = '';
+                tasks.forEach(task => {
+                    template += `
+                        <tr taskId="${task.id}">
+                            <td><a href="#editar-libro" class="task-item">${task.id}</td></a>
+                            <td>${task.imagen}</td>
+                            <td>${task.titulo}</td>
+                            <td>${task.autor}</td>
+                            <td>${task.isbn}</td>
+                            <td>${task.resumen}</td>
+                            <td>${task.formato}</td>
+                            <td>
+                                <img src="../assets/icons/trash.svg" class="task-delete-libro" value="Borrar">
+                            </td>
+                        </tr>
+                    `
+                });
+                $('#tasksLibro').html(template);
+            }
+        });
+    }
+
+    //Funcion que me permite eliminar un libro por su id sin necesidad de recargar la pagina.
+    $(document).on('click', '.task-delete-libro', function () {
+        //Muestro un alert para confirmar eliminar el libro.
+        if (confirm('¿Quieres eliminar este libro?')) {
+            let element = $(this)[0].parentElement.parentElement;
+            let id = $(element).attr('taskId');
+            $.post('../app/libro-delete.php', {id}, function (response) {
+                fetchTasksLibro();
+            });
+        }
+    });
+
+    //Funcion que me permite editar un libro sin necesidad de recargar la pagina.
+    $(document).on('click', '.task-item', function () {
+        let element = $(this)[0].parentElement.parentElement;
+        let id = $(element).attr('taskId');
+        $.post('../app/libro-single.php', {id}, function (response) {
+            const task = JSON.parse(response);
+            $('#imagen').val(task.imagen);
+            $('#titulo').val(task.titulo);
+            $('#autor').val(task.autor);
+            $('#isbn').val(task.isbn);
+            $('#resumen').val(task.resumen);
+            $('#formato').val(task.formato);
+            $('#taskId').val(task.id);
+            edit = true;
+        })
+    });
 });
 

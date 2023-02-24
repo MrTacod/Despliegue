@@ -101,61 +101,91 @@
                 </div>
             </div>
 
-            <section class="" style="">
-                <article class="">
-                    
-                <!-- Lista de alumnos -->
+            <div class="p-4" id="border-admin">
+                
+                <!-- Lista de libros -->
 
-                    <h1><b>Lista de alumnos</b><a href="print/alumno-print-excel.php" id="print-excel-admin">Excel <i class="fa-solid fa-file-excel"></i></a> <a href="print/alumno-print-pdf.php" id="print-pdf-admin">PDF <i class="fa-solid fa-file-pdf"></i></a></h1>
-                    <div id="scroll">
-                        <table class="table border border-primary" id="tabla-admin">
-                            <thead>
-                                <tr id="tr-admin">
-                                <td scope="col" class="text-white"><b>Id</b></td>
-                                <td scope="col" class="text-white"><b>Nombre</b></td>
-                                <td scope="col" class="text-white"><b>Apellido</b></td>
-                                <td scope="col" class="text-white"><b>Correo electrónico</b></td>
-                                <td scope="col" class="text-white"><b>Contraseña</b></td>
-                                <td scope="col" class="text-white"><b>Teléfono</b></td>
-                                <td scope="col" class="text-white"><b>Rol</b></td>
-                                <td scope="col" class="bg-danger text-white"><b>Eliminar</b></td>
-                                </tr>
-                                <tbody id="tasksAlumno"></tbody>
-                            </thead>
-                        </table>
-                    </div>
-                    
-                    <!-- Editar usuario -->
+                <h1><b>Lista de libros</b><a href="print/libro-print-excel.php" id="print-excel-admin">Excel <i class="fa-solid fa-file-excel"></i></a> <a href="print/libro-print-pdf.php" id="print-pdf-admin">PDF <i class="fa-solid fa-file-pdf"></i></a></h1>
+                <div id="scroll">
+                    <table class="table border border-primary" id="tabla-admin">
+                        <thead>
+                            <tr id="tr-admin">
+                            <td scope="col" class="text-white"><b>Id</b></td>
+                            <td scope="col" class="text-white"><b>Imagen</b></td>
+                            <td scope="col" class="text-white"><b>Titulo</b></td>
+                            <td scope="col" class="text-white"><b>Autor</b></td>
+                            <td scope="col" class="text-white"><b>ISBN</b></td>
+                            <td scope="col" class="text-white"><b>Resumen</b></td>
+                            <td scope="col" class="text-white"><b>Formato</b></td>
+                            <td scope="col" class="bg-danger text-white"><b>Eliminar</b></td>
+                            </tr>
+                            <tbody id="tasksLibro"></tbody>
+                        </thead>
+                    </table>
+                </div>
 
-                    <div id="hr-vertical1">
-                        <h1><b>Editar usuario</b></h1>
+                <div class="panel">
+                    <!-- Editar libro -->
+
+                    <div>
+                        <h1><b>Editar libro</b></h1>
                             
-                        <form action="../app/user-edit.php" method="post" id="form-admin">
+                        <form action="../app/libro-edit.php" method="post" id="form-admin">
                             <input type="hidden" name="id" id="taskId"><br>
 
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" name="nombre" id="nombre" maxlength="30"><br>
+                            <label for="imagen">Imagen:</label>
+                            <input type="text" name="imagen" id="imagen" maxlength="50"><br>
 
-                            <label for="apellido">Apellido:</label>
-                            <input type="text" name="apellido" id="apellido" maxlength="30"><br>
+                            <label for="titulo">Titulo:</label>
+                            <input type="text" name="titulo" id="titulo" maxlength="50"><br>
 
-                            <label for="correo">Correo electrónico:</label>
-                            <input type="text" name="correo" id="correo" maxlength="30"><br>
+                            <label for="autor">Autor:</label>
+                            <input type="text" name="autor" id="autor" maxlength="50"><br>
 
-                            <label for="contrasena">Contraseña:</label>
-                            <input type="text" name="contrasena" id="contrasena" maxlength="30"><br>
+                            <label for="isbn">ISBN:</label>
+                            <input type="text" name="isbn" id="isbn" maxlength="50"><br>
 
-                            <label for="telefono">Teléfono:</label>
-                            <input type="text" name="telefono" id="telefono" maxlength="9"><br>
+                            <label for="resumen">Resumen:</label>
+                            <input type="text" name="resumen" id="resumen" maxlength="255"><br>
 
-                            <label for="rol">Rol:</label>
-                            <input type="text" name="rol" id="rol" maxlength="30"><br>
+                            <label for="formato">Formato:</label>
+                            <input type="text" name="formato" id="formato" maxlength="50"><br>
 
                             <input type="submit" name="actualizar" value="Actualizar">
                         </form>
                     </div>
-                </article>
-            </section>
+
+                    <!-- Crear libro -->
+
+                    <div>
+                        <h1><b>Crear libro</b></h1>
+                            
+                        <form action="../app/libro-add.php" method="post" id="form-admin">
+                            <input type="hidden" name="id" id="taskId"><br>
+
+                            <label for="imagen">Imagen:</label>
+                            <input type="text" name="imagen" id="imagen" maxlength="30"><br>
+
+                            <label for="titulo">Titulo:</label>
+                            <input type="text" name="titulo" id="titulo" maxlength="30"><br>
+
+                            <label for="autor">Autor:</label>
+                            <input type="text" name="autor" id="autor" maxlength="30"><br>
+
+                            <label for="isbn">ISBN:</label>
+                            <input type="text" name="isbn" id="isbn" maxlength="30"><br>
+
+                            <label for="resumen">Resumen:</label>
+                            <input type="text" name="resumen" id="resumen" maxlength="150"><br>
+
+                            <label for="formato">Formato:</label>
+                            <input type="text" name="formato" id="formato" maxlength="30"><br>
+
+                            <input type="submit" name="crear" value="Crear">
+                        </form>
+                    </div>
+                </div>
+            </div>
 
             <a href="admin-index.php"><button type="submit" class="btn btn-primary w-100 submit fs-5">Volver al inicio</button></a>
         </div>
