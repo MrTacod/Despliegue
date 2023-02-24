@@ -79,7 +79,7 @@ if ($connection) {
                                     <h4 class="text-center all-tittles" style="margin-bottom: 30px;"><u>Ha surgido un error</u></h4>
                                     <h4 class="text-center" style="margin-bottom: 30px;">El rol del usuario es incorrecto</h4>
                                     <div class="form-group">
-                                        <a href="../admin-index.php"><button type="submit" class="btn btn-primary w-100 submit fs-5">Volver al panel de administrador</button></a>
+                                        <a href="../admin/admin-index.php"><button type="submit" class="btn btn-primary w-100 submit fs-5">Volver al panel de administrador</button></a>
                                     </div>
                                 </div>  
                             </body>

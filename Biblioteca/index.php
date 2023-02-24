@@ -116,7 +116,7 @@
                         } else {
                         ?>
                             <li class="tooltips-general"  data-href="index.html" data-placement="bottom" title="Iniciar sesión">
-                                <a href="login/login.php"><button type="button" class="btn btn-info btn-lg"><i class="zmdi zmdi-account-circle"></i></button></a>
+                                <a href="login/login.php"><i class="zmdi zmdi-account-circle btn btn-info btn-lg"></i>.</a>
                             </li>
                         <?php
                         }
