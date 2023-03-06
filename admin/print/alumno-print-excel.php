@@ -30,7 +30,7 @@ if ($connection) {
             'contrasena' => $row['contrasena'],
             'telefono' => $row['telefono'],
             'rol' => $row['rol'],
-            'id_usuario' => $row['id_usuario']
+            'id' => $row['id']
         );
     }
 ?>
@@ -46,7 +46,7 @@ if ($connection) {
 <body>
     <table>
         <tr>
-            <th style="background-color: blue; color: white;">Id_usuario</th>
+            <th style="background-color: blue; color: white;">Id</th>
             <th style="background-color: blue; color: white;">Nombre</th>
             <th style="background-color: blue; color: white;">Apellido</th>
             <th style="background-color: blue; color: white;">Correo</th>
@@ -57,7 +57,7 @@ if ($connection) {
         <tbody> 
             <?php foreach($json as $user){ ?>
                 <tr>
-                    <td><?php echo $user['id_usuario']; ?></td>
+                    <td><?php echo $user['id']; ?></td>
                     <td><?php echo $user['nombre']; ?></td>
                     <td><?php echo $user['apellido']; ?></td>
                     <td><?php echo $user['correo']; ?></td>

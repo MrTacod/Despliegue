@@ -6,7 +6,7 @@ if ($connection) {
 
     /* Se recojen los datos del usuario */
 
-    $id_usuario = $_POST['id_usuario'];
+    $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $correo = $_POST['correo'];
@@ -17,7 +17,7 @@ if ($connection) {
     /* Se actualizan según los datos que le queramos cambiar */
 
     $query = "UPDATE usuario SET nombre = '$nombre', apellido = '$apellido', correo = '$correo', contrasena = '$contrasena', 
-    telefono = '$telefono', rol = '$rol' WHERE id_usuario = '$id_usuario'";
+    telefono = '$telefono', rol = '$rol' WHERE id = '$id'";
 
     $result = mysqli_query($connection, $query);
 
@@ -79,7 +79,7 @@ if ($connection) {
                                     <h4 class="text-center all-tittles" style="margin-bottom: 30px;"><u>Ha surgido un error</u></h4>
                                     <h4 class="text-center" style="margin-bottom: 30px;">El rol del usuario es incorrecto</h4>
                                     <div class="form-group">
-                                        <a href="../admin-index.php"><button type="submit" class="btn btn-primary w-100 submit fs-5">Volver al panel de administrador</button></a>
+                                        <a href="../admin/admin-index.php"><button type="submit" class="btn btn-primary w-100 submit fs-5">Volver al panel de administrador</button></a>
                                     </div>
                                 </div>  
                             </body>

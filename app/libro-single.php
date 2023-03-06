@@ -4,10 +4,10 @@ include('database.php');
 
 if ($connection) {
 
-    /* Selecciona un solo usuario y recoje sus datos a través de su id */
+    /* Selecciona un solo libro y recoje sus datos a través de su id */
 
     $id = $_POST['id'];
-    $query = "SELECT * FROM usuario WHERE id = $id";
+    $query = "SELECT * FROM libro WHERE id = $id";
     $result = mysqli_query($connection, $query);
     if (!$result) {
         die('Query Failed');
@@ -16,12 +16,12 @@ if ($connection) {
     $json = array();
     while($row = mysqli_fetch_array($result)) {
         $json[] = array (
-            'nombre' => $row['nombre'],
-            'apellido' => $row['apellido'],
-            'correo' => $row['correo'],
-            'contrasena' => $row['contrasena'],
-            'telefono' => $row['telefono'],
-            'rol' => $row['rol'],
+            'imagen' => $row['imagen'],
+            'titulo' => $row['titulo'],
+            'autor' => $row['autor'],
+            'isbn' => $row['isbn'],
+            'resumen' => $row['resumen'],
+            'formato' => $row['formato'],
             'id' => $row['id']
         );
     }

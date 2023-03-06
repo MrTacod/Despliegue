@@ -13,7 +13,7 @@ if ($connection) {
         $contrasena = $_POST['contrasena'];
         $telefono = $_POST['telefono'];
 
-        /* En caso de estar todos los campos, crea el usuario y lo guarda en la base de datos */
+        /* Aqui cuento el numero de usuarios que tiene la base de datos */
 
         $query = "SELECT COUNT(*) FROM usuario";
         $result = mysqli_query($connection, $query);
@@ -21,10 +21,14 @@ if ($connection) {
         $result->data_seek(0);
         $row = $result->fetch_row();
 
+        /* Si hay 0 usuarios, le digo que cree el usuario con el rol de 'admin' */
+
         if($row[0] == 0){
             $query = "INSERT INTO usuario(nombre, apellido, correo, contrasena, telefono, rol) VALUES 
             ('$nombre', '$apellido', '$correo', '$contrasena', '$telefono', 'admin')";
             $result = mysqli_query($connection, $query);
+
+        /* Sino, le digo que lo cree con el rol de 'alumno' */
         } else {
             $query = "INSERT INTO usuario(nombre, apellido, correo, contrasena, telefono, rol) VALUES 
             ('$nombre', '$apellido', '$correo', '$contrasena', '$telefono', 'alumno')";

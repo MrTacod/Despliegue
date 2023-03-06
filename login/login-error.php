@@ -18,7 +18,7 @@ if ($connection) {
     <link rel="stylesheet" href="../css/style.css"/>
     <link rel="stylesheet" href="../css/login.css"/>
 </head>
-<body class="full-cover-background" style="background-image:url(assets/img/font-login.jpg);">
+<body class="full-cover-background" style="background-image:url(../assets/img/font-login.jpg);">
     <div class="form-container">
         <p class="text-center" style="margin-top: 17px;">
             <i class="zmdi zmdi-account-circle zmdi-hc-5x"></i>

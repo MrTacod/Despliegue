@@ -4,9 +4,9 @@ include('database.php');
 
 if ($connection) {
 
-    /* Selecciona y muestra todos los usuarios que se encuentren en la base de datos */
+    /* Selecciona y muestra todos los libros que se encuentren en la base de datos */
 
-    $query = "SELECT * FROM usuario";
+    $query = "SELECT * FROM libro";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
@@ -16,12 +16,12 @@ if ($connection) {
     $json = array();
     while($row = mysqli_fetch_array($result)) {
         $json[] = array(
-            'nombre' => $row['nombre'],
-            'apellido' => $row['apellido'],
-            'correo' => $row['correo'],
-            'contrasena' => $row['contrasena'],
-            'telefono' => $row['telefono'],
-            'rol' => $row['rol'],
+            'imagen' => $row['imagen'],
+            'titulo' => $row['titulo'],
+            'autor' => $row['autor'],
+            'isbn' => $row['isbn'],
+            'resumen' => $row['resumen'],
+            'formato' => $row['formato'],
             'id' => $row['id']
         );
     }
