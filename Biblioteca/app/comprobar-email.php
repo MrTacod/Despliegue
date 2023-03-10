@@ -46,8 +46,8 @@ if ($connection) {
             $email->isSMTP();
             $email->Host = 'smtp.gmail.com';
             $email->SMTPAuth = true;
-            $email->Username = 'footbase.shop@gmail.com';
-            $email->Password = 'isqpqcvwcapawwjg';
+            $email->Username = 'pruebabiblioteca3333@gmail.com';
+            $email->Password = 'rgfezpnoqhpdnark';
             $email->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $email->Port = 25;
             $email->SMTPOptions = array(
@@ -60,7 +60,7 @@ if ($connection) {
 
             /* Escribo el mensaje que quiero que le llegue al usuario junto al código de verificación */
 
-            $email->setFrom('footbase.shop@gmail.com', 'Biblioteca del Saber');
+            $email->setFrom('pruebabiblioteca3333@gmail.com', 'Biblioteca del Saber');
             $email->addAddress($correo, 'Receptor');
 
             $email->isHTML(true);

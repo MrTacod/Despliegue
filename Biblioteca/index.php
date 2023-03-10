@@ -3,6 +3,38 @@
     include ("app/database.php");
     session_start();
 
+    /* Mostrar libro 1 */
+
+    $query = "SELECT titulo FROM libro";
+    $result = mysqli_query($connection, $query);
+
+    $result->data_seek(0);
+    $row_libro1 = $result->fetch_row();
+
+    /* Mostrar libro 2 */
+
+    $query = "SELECT titulo FROM libro";
+    $result = mysqli_query($connection, $query);
+
+    $result->data_seek(1);
+    $row_libro2 = $result->fetch_row();
+
+    /* Mostrar libro 3 */
+
+    $query = "SELECT titulo FROM libro";
+    $result = mysqli_query($connection, $query);
+
+    $result->data_seek(2);
+    $row_libro3 = $result->fetch_row();
+
+    /* Mostrar libro 4 */
+
+    $query = "SELECT titulo FROM libro";
+    $result = mysqli_query($connection, $query);
+
+    $result->data_seek(3);
+    $row_libro4 = $result->fetch_row();
+
     if ($connection) {
 
     /* Aquí compruebo si la sesión es 'invitado', 'admin' o un usuario registrado */
@@ -53,13 +85,13 @@
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
-                        <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
-                        <li><a href="home.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i>&nbsp;&nbsp; Libros</a></li>
-                        <li><a href="home.html"><i class="zmdi zmdi-assignment-o zmdi-hc-fw"></i>&nbsp;&nbsp; Categorías</a></li>
-                        <li><a href="home.html"><i class="zmdi zmdi-alarm zmdi-hc-fw"></i>&nbsp;&nbsp; Préstamos y reservas</a></li>
+                        <li><a href="index.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a href="index.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i>&nbsp;&nbsp; Libros</a></li>
+                        <li><a href="index.php"><i class="zmdi zmdi-assignment-o zmdi-hc-fw"></i>&nbsp;&nbsp; Categorías</a></li>
+                        <li><a href="index.php"><i class="zmdi zmdi-alarm zmdi-hc-fw"></i>&nbsp;&nbsp; Préstamos y reservas</a></li>
                         <li><a href="contacto/contacto.php"><i class="zmdi zmdi-email zmdi-hc-fw"></i>&nbsp;&nbsp; Contacto</a></li>
-                        <li><a href="home.html"><i class="zmdi zmdi-collection-text zmdi-hc-fw"></i>&nbsp;&nbsp; Términos y condiciones</a></li>
-                        <li><a href="advancesettings.html"><i class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp; Configuración</a></li>
+                        <li><a href="index.php"><i class="zmdi zmdi-collection-text zmdi-hc-fw"></i>&nbsp;&nbsp; Términos y condiciones</a></li>
+                        <li><a href="index.php"><i class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp; Configuración</a></li>
                     </ul>
                 </div>
             </div>
@@ -77,7 +109,7 @@
                             <li style="color:#fff; cursor:default;">
                                 <span class="all-tittles fs-5"><?php echo $_SESSION['nombre'] ?></span>
                                 <li class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
-                                    <a href="login/cerrar-sesion.php"><i class="zmdi zmdi-power btn btn-danger btn-lg"></i></a>
+                                    <a href="login/cerrar-sesion.php" aria-label="first link"><i class="zmdi zmdi-power btn btn-danger btn-lg"></i></a>
                                 </li>
                                 <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
                                     <i class="zmdi zmdi-search"></i>
@@ -99,12 +131,12 @@
                             <li style="color:#fff; cursor:default;">
                                 <span class="all-tittles fs-5"><?php echo $_SESSION['nombre'] ?></span>
                                 <li class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
-                                    <a href="login/cerrar-sesion.php"><i class="zmdi zmdi-power btn btn-danger btn-lg"></i></a>
+                                    <a href="login/cerrar-sesion.php" aria-label="first link"><i class="zmdi zmdi-power btn btn-danger btn-lg"></i></a>
                                 </li>
-                                <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
+                                <li class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
                                     <i class="zmdi zmdi-search"></i>
                                 </li>
-                                <li  class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
+                                <li class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
                                     <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
                                 </li>
                                 <li class="mobile-menu-button visible-xs" style="float: left !important;">
@@ -116,7 +148,7 @@
                         } else {
                         ?>
                             <li class="tooltips-general"  data-href="index.html" data-placement="bottom" title="Iniciar sesión">
-                                <a href="login/login.php"><i class="zmdi zmdi-account-circle btn btn-info btn-lg"></i>.</a>
+                                <a href="login/login.php" aria-label="first link"><i class="zmdi zmdi-account-circle btn btn-info btn-lg"></i></a>
                             </li>
                         <?php
                         }
@@ -125,29 +157,29 @@
             </nav>
             <div class="container">
                 <div class="page-header">
-                <h1 class="all-tittles">Sistema bibliotecario <small>Inicio</small></h1>
+                <h1 class="all-tittles">Sistema bibliotecario</h1>
                 </div>
             </div>
             <section class="full-reset text-center" style="padding: 40px 0;">
                 <article class="tile">
-                    <div class="tile-icon full-reset"><i class="zmdi">Libro</i></div>
+                    <div><img src="assets/img/chica-nieve.png" width="218px" height="115px" alt="La chica de nieve"></div>
                     <div class="tile-name all-tittles">Reservar</div>
-                    <div class="tile-num full-reset">Título</div>
+                    <div class="tile-num full-reset" style="font-size: 25px;"><b><?php echo $row_libro1[0] ?></b></div>
                 </article>
                 <article class="tile">
-                    <div class="tile-icon full-reset"><i class="zmdi">Libro</i></div>
+                    <div><img src="assets/img/bestia.png" width="218px" height="115px" alt="La bestia"></div>
                     <div class="tile-name all-tittles">Reservar</div>
-                    <div class="tile-num full-reset">Título</div>
+                    <div class="tile-num full-reset" style="font-size: 25px;"><b><?php echo $row_libro2[0] ?></b></div>
                 </article>
                 <article class="tile">
-                    <div class="tile-icon full-reset"><i class="zmdi">Libro</i></div>
+                    <div><img src="assets/img/magia-orden.png" width="218px" height="115px" alt="La magia del orden"></div>
                     <div class="tile-name all-tittles">Reservar</div>
-                    <div class="tile-num full-reset">Título</div>
+                    <div class="tile-num full-reset" style="font-size: 25px;"><b><?php echo $row_libro3[0] ?></b></div>
                 </article>
                 <article class="tile">
-                    <div class="tile-icon full-reset"><i class="zmdi">Libro</i></div>
+                    <div><img src="assets/img/mercader-libros.png" width="218px" height="115px" alt="El mercader de libros"></div>
                     <div class="tile-name all-tittles">Reservar</div>
-                    <div class="tile-num full-reset">Título</div>
+                    <div class="tile-num full-reset" style="font-size: 25px;"><b><?php echo $row_libro4[0] ?></b></div>
                 </article>
                 <article class="tile">
                     <div class="tile-icon full-reset"><i class="zmdi">Libro</i></div>
@@ -190,7 +222,7 @@
                     <div class="tile-num full-reset">Título</div>
                 </article>
             </section>
-            <footer class="footer full-reset" style="height: 128px;">
+            <footer class="footer full-reset" style="height: 123px;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">
