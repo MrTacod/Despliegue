@@ -105,6 +105,12 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `contacto`
+--
+ALTER TABLE `contacto`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
