@@ -92,13 +92,13 @@
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
-                        <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
-                        <li><a href="home.html"><i class="zmdi zmdi-case zmdi-hc-fw"></i>&nbsp;&nbsp; Administración</a></li>
-                        <li><a href="home.html"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios</a></li>
-                        <li><a href="home.html"><i class="zmdi zmdi-assignment-o zmdi-hc-fw"></i>&nbsp;&nbsp; Libros y catálogo</a></li>
-                        <li><a href="home.html"><i class="zmdi zmdi-alarm zmdi-hc-fw"></i>&nbsp;&nbsp; Préstamos y reservas</a></li>
-                        <li><a href="home.html"><i class="zmdi zmdi-collection-text zmdi-hc-fw"></i>&nbsp;&nbsp; Términos y condiciones</a></li>
-                        <li><a href="advancesettings.html"><i class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp; Configuración</a></li>
+                        <li><a href="../index.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a href="../index.php"><i class="zmdi zmdi-case zmdi-hc-fw"></i>&nbsp;&nbsp; Administración</a></li>
+                        <li><a href="../index.php"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios</a></li>
+                        <li><a href="../index.php"><i class="zmdi zmdi-assignment-o zmdi-hc-fw"></i>&nbsp;&nbsp; Libros y catálogo</a></li>
+                        <li><a href="../index.php"><i class="zmdi zmdi-alarm zmdi-hc-fw"></i>&nbsp;&nbsp; Préstamos y reservas</a></li>
+                        <li><a href="../index.php"><i class="zmdi zmdi-collection-text zmdi-hc-fw"></i>&nbsp;&nbsp; Términos y condiciones</a></li>
+                        <li><a href="../index.php"><i class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp; Configuración</a></li>
                     </ul>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                         <li style="color:#fff; cursor:default;">
                             <span class="all-tittles fs-5"><?php echo $_SESSION['nombre'] ?></span>
                             <li class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
-                                <a href="../login/cerrar-sesion.php"><i class="zmdi zmdi-power btn btn-danger btn-lg"></i></a>
+                                <a href="../login/cerrar-sesion.php" style="color: white;" aria-label="first link"><i class="zmdi zmdi-power btn btn-danger btn-lg"></i></a>
                             </li>
                             <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
                                 <i class="zmdi zmdi-search"></i>
@@ -135,33 +135,33 @@
             </nav>
             <div class="container">
                 <div class="page-header">
-                <h1 class="all-tittles">Sistema bibliotecario <small>Inicio</small></h1>
+                <h1 class="all-tittles">Sistema bibliotecario</h1>
                 </div>
             </div>
             <section class="full-reset text-center" style="padding: 40px 0;">
                 <article class="tile">
                     <div class="tile-icon full-reset"><i class="zmdi zmdi-face"></i></div>
-                    <a href='panel-admin.php' class='text-muted'><div class="tile-name all-tittles">administradores</div></a>
+                    <a href='panel-admin.php' class='text-muted'><div class="tile-name all-tittles" style="color: black;">administradores</div></a>
                     <div class="tile-num full-reset"><?php echo $row_admin[0] ?></div>
                 </article>
                 <article class="tile">
                     <div class="tile-icon full-reset"><i class="zmdi zmdi-accounts"></i></div>
-                    <a href='panel-alumno.php' class='text-muted'><div class="tile-name all-tittles">estudiantes</div></a>
+                    <a href='panel-alumno.php' class='text-muted'><div class="tile-name all-tittles" style="color: black;">estudiantes</div></a>
                     <div class="tile-num full-reset"><?php echo $row_alumno[0] ?></div>
                 </article>
                 <article class="tile">
                     <div class="tile-icon full-reset"><i class="zmdi zmdi-male-alt"></i></div>
-                    <a href='panel-profesor.php' class='text-muted'><div class="tile-name all-tittles">profesores</div></a>
+                    <a href='panel-profesor.php' class='text-muted'><div class="tile-name all-tittles" style="color: black;">profesores</div></a>
                     <div class="tile-num full-reset"><?php echo $row_profesor[0] ?></div>
                 </article>
                 <article class="tile">
                     <div class="tile-icon full-reset"><i class="zmdi zmdi-book"></i></div>
-                    <a href='panel-libro.php' class='text-muted'><div class="tile-name all-tittles">libros</div></a>
+                    <a href='panel-libro.php' class='text-muted'><div class="tile-name all-tittles" style="color: black;">libros</div></a>
                     <div class="tile-num full-reset"><?php echo $row_libro[0] ?></div>
                 </article>
                 <article class="tile">
                     <div class="tile-icon full-reset"><i class="zmdi zmdi-email"></i></div>
-                    <a href='panel-contacto.php' class='text-muted'><div class="tile-name all-tittles">contacto</div></a>
+                    <a href='panel-contacto.php' class='text-muted'><div class="tile-name all-tittles" style="color: black;">contacto</div></a>
                     <div class="tile-num full-reset"><?php echo $row_contacto[0] ?></div>
                 </article>
                 <article class="tile">

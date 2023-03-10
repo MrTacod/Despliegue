@@ -115,7 +115,7 @@
                                 <td scope="col" class="text-white"><b>Id_usuario</b></td>
                                 <td scope="col" class="text-white"><b>Correo</b></td>
                                 <td scope="col" class="text-white"><b>Mensaje</b></td>
-                                <td scope="col" class="bg-danger text-white"><b>Eliminar</b></td>
+                                <td scope="col" class="bg-success text-white"><b>Leído</b></td>
                                 </tr>
                                 <tbody id="tasksContacto"></tbody>
                             </thead>
@@ -123,6 +123,10 @@
                     </div>
                 </article>
             </section>
+
+            <div>
+                <a href="admin-index.php"><button type="submit" class="btn btn-primary w-100 submit fs-5" style="margin-top: 50px; margin-left: 50px;">Volver al inicio</button></a>
+            </div>
             
         </div>
         <script src="./js/jquery.js"></script>
