@@ -3,38 +3,6 @@
     include ("app/database.php");
     session_start();
 
-    /* Mostrar libro 1 */
-
-    $query = "SELECT titulo FROM libro";
-    $result = mysqli_query($connection, $query);
-
-    $result->data_seek(0);
-    $row_libro1 = $result->fetch_row();
-
-    /* Mostrar libro 2 */
-
-    $query = "SELECT titulo FROM libro";
-    $result = mysqli_query($connection, $query);
-
-    $result->data_seek(1);
-    $row_libro2 = $result->fetch_row();
-
-    /* Mostrar libro 3 */
-
-    $query = "SELECT titulo FROM libro";
-    $result = mysqli_query($connection, $query);
-
-    $result->data_seek(2);
-    $row_libro3 = $result->fetch_row();
-
-    /* Mostrar libro 4 */
-
-    $query = "SELECT titulo FROM libro";
-    $result = mysqli_query($connection, $query);
-
-    $result->data_seek(3);
-    $row_libro4 = $result->fetch_row();
-
     if ($connection) {
 
     /* Aquí compruebo si la sesión es 'invitado', 'admin' o un usuario registrado */
@@ -51,6 +19,38 @@
         } else {
             header("Location: login/login.php"); 
         }
+
+        /* Mostrar libro 1 */
+
+        $query = "SELECT titulo FROM libro";
+        $result = mysqli_query($connection, $query);
+
+        $result->data_seek(0);
+        $row_libro1 = $result->fetch_row();
+
+        /* Mostrar libro 2 */
+
+        $query = "SELECT titulo FROM libro";
+        $result = mysqli_query($connection, $query);
+
+        $result->data_seek(1);
+        $row_libro2 = $result->fetch_row();
+
+        /* Mostrar libro 3 */
+
+        $query = "SELECT titulo FROM libro";
+        $result = mysqli_query($connection, $query);
+
+        $result->data_seek(2);
+        $row_libro3 = $result->fetch_row();
+
+        /* Mostrar libro 4 */
+
+        $query = "SELECT titulo FROM libro";
+        $result = mysqli_query($connection, $query);
+
+        $result->data_seek(3);
+        $row_libro4 = $result->fetch_row();
 
 ?>
 
